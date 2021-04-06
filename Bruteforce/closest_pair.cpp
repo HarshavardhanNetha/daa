@@ -32,7 +32,10 @@ int main(){
 		printf("(%d,%d) ",c[i].x,c[i].y);
 	}
 	printf("\n");
-	float min=99999.99,x;
+	float min,x;
+	
+	min=find_distance(c[0].x,c[0].y,c[1].x,c[1].y);
+	index1=0, index2=1;
 	
 	for(i=0;i<n-1;i++){
 		for(j=i+1;j<n;j++){
@@ -43,7 +46,7 @@ int main(){
 			min=x;
 			index1=i;
 			index2=j;
-			printf("%.2f \n",min);
+		//	printf("%.2f \n",min);
 		}
 	}
 	
@@ -53,6 +56,6 @@ int main(){
 
 float find_distance(int x,int y, int xx, int yy){
 	int temp=((xx-x)*(xx-x))+((yy-y)*(yy-y));
-	printf("%d %d%d %d%d   - ",temp,x,y,xx,yy);
+	//printf("%d %d%d %d%d   - ",temp,x,y,xx,yy);
 	return sqrt(temp);
 }
